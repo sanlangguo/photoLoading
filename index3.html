@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
   <meta charset="utf-8" />
   <title>图片预加载-有序加载</title>
@@ -7,9 +8,11 @@
     a {
       text-decoration: none;
     }
+
     .box {
       text-align: center;
     }
+
     .btn {
       display: inline-block;
       height: 30px;
@@ -20,11 +23,13 @@
       margin-right: 50px;
       color: #333;
     }
+
     .btn:hover {
       background-color: #eee;
     }
   </style>
 </head>
+
 <body>
   <div class="box">
     <img src="http://45.34.137.202:8080/comicdata/12307/1/1.jpg" id="img" width="1200" />
@@ -44,11 +49,11 @@
       'http://45.34.137.202:8080/comicdata/12307/1/4.jpg'
     ];
     var len = imgs.length,
-        index = 0;
+      index = 0;
     $.preload(imgs, {
       order: 'ordered'
     })
-    $('.btn').on('click', function() {
+    $('.btn').on('click', function () {
       if ($(this).data('control') === 'prev') {
         index = Math.max(0, --index);
       } else {
@@ -59,4 +64,5 @@
     });
   </script>
 </body>
+
 </html>
